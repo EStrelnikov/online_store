@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
 import classes from "./Menu.module.scss";
 
-const Menu: React.FC = () => {
-  return (
-    <div className={classes.component}>Menu</div>
-  )
-};
+const Menu: React.FC = () => (
+  <div className={classes.component}>Menu</div>
+);
 
 export default Menu;
