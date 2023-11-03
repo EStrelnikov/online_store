@@ -1,1 +1,1 @@
-export { default } from "./AppRouter.tsx";
+export { default } from "./AppRouter";

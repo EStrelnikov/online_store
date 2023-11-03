@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import classes from "./Header.module.scss"; 
+import classes from "./Header.module.scss";
 
-const Header: React.FC = () => {
-  return (
-    <header className={classes.component}>Header</header>
-  )
-};
+const Header: React.FC = () => (
+  <header className={classes.component}>Header</header>
+);
 
 export default Header;

@@ -1,41 +1,47 @@
-{
-    "parser": "@typescript-eslint/parser",
+module.exports = {
+  "parser": "@typescript-eslint/parser",
 
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
     },
-    "ecmaVersion": 12,
     "sourceType": "module",
+    "project": "tsconfig.json",
+    "tsconfigRootDir": __dirname,
+    "ecmaVersion": 12,
     "createDefaultProgram": true,
-    "project": "./tsconfig.json"
   },
   "env": {
     "browser": true,
     "node": true,
-    "es2021": true
+    "es2021": true,
   },
   "settings": {
     "react": {
-      "version": "detect"
+      "version": "detect",
     },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
   },
   "plugins": [
     "@typescript-eslint/eslint-plugin",
     "react",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
   ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:react/recommended",
-    "airbnb-typescript"
+    "airbnb-typescript",
+  ],
+  "overrides": [
+    {
+      "files": ["src/**/*.js", "src/**/*.ts"],
+    },
   ],
   "rules": {
     "import/newline-after-import": ["error", { "count": 1 }],
@@ -47,9 +53,9 @@
         "newlines-between": "always",
         "groups": [
           ["builtin", "external"],
-          ["sibling", "parent", "index", "internal"]
-        ]
-      }
+          ["sibling", "parent", "index", "internal"],
+        ],
+      },
     ],
     "arrow-body-style": "warn",
     "max-len": ["error", {
@@ -60,7 +66,7 @@
       "ignoreUrls": true,
       "ignoreRegExpLiterals": true,
       "ignoreStrings": true,
-      "ignoreTemplateLiterals": true
+      "ignoreTemplateLiterals": true,
     }],
     "class-methods-use-this": "off",
     "global-require": "off",
@@ -84,7 +90,7 @@
     "default-case": "error",
     "padding-line-between-statements": [
       "error",
-      { "blankLine": "always", "prev": "*", "next": "export" }
+      { "blankLine": "always", "prev": "*", "next": "export" },
     ],
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-unused-vars": "warn",
@@ -97,6 +103,7 @@
     "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/space-before-blocks": "off",
     "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/quotes": ["error", "double"],
 
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
@@ -104,22 +111,22 @@
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
     "react/self-closing-comp": ["error", {
-      "component": true
+      "component": true,
     }],
     "react/jsx-tag-spacing": ["error", {
-        "closingSlash": "never",
-        "beforeSelfClosing": "always",
-        "afterOpening": "never",
-        "beforeClosing": "never"
-      }],
-  
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "jsx-a11y/anchor-is-valid": "off",
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never",
+      "beforeClosing": "never",
+    }],
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/label-has-associated-control": ["error", {
       "required": {
-        "some": ["nesting", "id"]
-      }
-    }]
-  }
-}
+        "some": ["nesting", "id"],
+      },
+    }],
+  },
+};
